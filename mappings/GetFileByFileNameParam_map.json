@@ -1,0 +1,18 @@
+{
+    "request": {
+        "urlPathPattern": "/files",
+		"queryParameters": {
+			"nameOfFile": {
+				"matches": "([1-3]*)"
+			},
+			"fileFormat": {
+				"matches": "([.][a-zA-Z0-9]*)"
+		}},
+		"method": "GET"
+	},
+    "response": {
+        "status": 200,
+        "bodyFileName": "template{{request.query.nameOfFile}}{{request.query.fileFormat}}",
+		"transformers": ["response-template"],
+		"fixedDelayMilliseconds": 1000
+}}

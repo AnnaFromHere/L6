@@ -1,0 +1,17 @@
+{
+    "request": {
+        "urlPathPattern": "/users",
+		"bodyPatterns": [
+		       {"matchesXPath": "users[count(user[age>=18]) = 3]" }
+			            ],			  
+		"method": "GET"
+	},
+    "response": {
+        "status": 200,
+	"body": "SUCCESS!",
+	"delayDistribution": {
+		"type": "uniform",
+		"lower": 440,
+	    "upper": 460
+}
+}}

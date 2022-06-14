@@ -1,0 +1,19 @@
+{
+    "request": {
+        "urlPathPattern": "/error",
+		"bodyPatterns": [
+		       {"matchesXPath": "//error_code",
+                "matchesXPath": "//description"}			  			   
+			            ],			  
+				
+
+		"method": "GET"
+	},
+    "response": {
+        "status": 200,
+	"jsonBody": {"errorCount": 50},
+	"delayDistribution": {
+		"type": "uniform",
+		"lower": 30,
+	    "upper": 50 }
+}}

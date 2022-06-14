@@ -1,0 +1,19 @@
+{
+    "request": {
+        "urlPathPattern": "/errors",
+		"bodyPatterns": [
+		       {
+				   "matchesJsonPath": "$.[?(@.error=~/[0-9]*/)]"			                         
+			   },
+			   {
+				   "matchesJsonPath": "$.[?(@.description=~/Division by zero/)]"
+			   }
+			            ],			  
+				
+
+		"method": "GET"
+	},
+    "response": {
+        "status": 200,
+	"jsonBody": {"errorCount": 50}
+}}
